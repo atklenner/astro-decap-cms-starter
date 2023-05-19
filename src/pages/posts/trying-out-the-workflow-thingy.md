@@ -2,7 +2,7 @@
 title: Trying out the workflow thingy
 publishDate: 19 May 2023
 author: Andrew
-authorURL: andrewklenner.netlify.app
+authorURL: https://andrewklenner.netlify.app
 description: This still seems slick.
 layout: ../../layouts/BlogPost.astro
 ---
