@@ -2,7 +2,7 @@
 title: My new post
 publishDate: 19 May 2023
 author: Andrew
-authorURL: andrewklenner.netlify.app
+authorURL: https://andrewklenner.netlify.app
 description: This is pretty slick
 layout: ../../layouts/BlogPost.astro
 ---
