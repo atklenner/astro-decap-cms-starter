@@ -1,5 +1,12 @@
 ---
-import "../styles/main.css";
+import BaseHead from "../components/BaseHead.astro";
+import BlogNav from "../components/BlogNav.astro";
+import ClientScripts from "../components/ClientScripts.astro";
+import Copyright from "../components/Copyright.astro";
+
+const title = "Astro + Decap";
+const description = "A blog built using Astro and Decap CMS.";
+const permalink = "https://example.com";
 ---
 
 <!DOCTYPE html>
@@ -10,14 +17,8 @@ import "../styles/main.css";
 -->
 <html>
   <head>
-    <title>Massively by HTML5 UP</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
+    <BaseHead {title} {description} {permalink} />
   </head>
-
   <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper" class="fade-in">
@@ -50,35 +51,7 @@ import "../styles/main.css";
       </header>
 
       <!-- Nav -->
-      <nav id="nav">
-        <ul class="links">
-          <li class="active"><a href="index.html">This is Massively</a></li>
-          <li><a href="generic.html">Generic Page</a></li>
-          <li><a href="elements.html">Elements Reference</a></li>
-        </ul>
-        <ul class="icons">
-          <li>
-            <a href="#" class="icon brands fa-twitter"
-              ><span class="label">Twitter</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon brands fa-facebook-f"
-              ><span class="label">Facebook</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon brands fa-instagram"
-              ><span class="label">Instagram</span></a
-            >
-          </li>
-          <li>
-            <a href="#" class="icon brands fa-github"
-              ><span class="label">GitHub</span></a
-            >
-          </li>
-        </ul>
-      </nav>
+      <BlogNav />
 
       <!-- Main -->
       <div id="main">
@@ -260,24 +233,9 @@ import "../styles/main.css";
         </footer>
       </div>
 
-      <!-- Footer -->
-
-      <!-- Copyright -->
-      <div id="copyright">
-        <ul>
-          <li>&copy; 2023 Andrew Klenner</li>
-          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-        </ul>
-      </div>
+      <Copyright />
     </div>
 
-    <!-- Scripts -->
-    <script is:inline src="assets/js/jquery.min.js"></script>
-    <script is:inline src="assets/js/jquery.scrollex.min.js"></script>
-    <script is:inline src="assets/js/jquery.scrolly.min.js"></script>
-    <script is:inline src="assets/js/browser.min.js"></script>
-    <script is:inline src="assets/js/breakpoints.min.js"></script>
-    <script is:inline src="assets/js/util.js"></script>
-    <script is:inline src="assets/js/main.js"></script>
+    <ClientScripts />
   </body>
 </html>
