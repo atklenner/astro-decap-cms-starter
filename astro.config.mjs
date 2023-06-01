@@ -41,16 +41,34 @@ export default defineConfig({
                 required: false,
               },
               {
-                name: "authorURL",
-                widget: "string",
-                label: "Author URL",
-                required: false,
-              },
-              {
                 name: "description",
                 widget: "string",
                 label: "Description",
                 required: false,
+              },
+              {
+                name: "thumbnail",
+                widget: "image",
+                label: "Featured Image",
+                required: true,
+              },
+              {
+                name: "thumbnailAlt",
+                widget: "string",
+                label: "Featured Image Description",
+                required: true,
+              },
+              {
+                name: "tags",
+                label: "Tags",
+                widget: "list",
+                default: ["meta"],
+              },
+              {
+                name: "keywords",
+                label: "Keywords",
+                widget: "list",
+                default: ["meta"],
               },
               { name: "body", widget: "markdown", label: "Post Body" },
               {
@@ -63,9 +81,32 @@ export default defineConfig({
               },
             ],
           },
+          {
+            name: "about",
+            label: "About Pages",
+            label_singular: "About Page",
+            folder: "src/pages",
+            create: false,
+            delete: false,
+            fields: [
+              { name: "title", widget: "string", label: "Title" },
+              { name: "body", widget: "markdown", label: "Post Body" },
+              {
+                name: "layout",
+                widget: "select",
+                default: "../../layouts/BaseLayout.astro",
+                options: [
+                  {
+                    label: "Blog Post",
+                    value: "../../layouts/BaseLayout.astro",
+                  },
+                ],
+              },
+            ],
+          },
         ],
       },
-      previewStyles: ["/src/styles/blog.css"],
+      previewStyles: ["/src/styles/preview.css"],
     }),
   ],
 });
