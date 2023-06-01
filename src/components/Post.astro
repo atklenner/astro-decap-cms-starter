@@ -1,0 +1,21 @@
+---
+const { post } = Astro.props;
+---
+
+<article>
+  <header>
+    <span class="date">{post.frontmatter.publishDate}</span>
+    <h2>
+      <a href="#">{post.frontmatter.title}</a>
+    </h2>
+  </header>
+  <a href="#" class="image fit">
+    <img src="images/pic02.jpg" alt="" />
+  </a>
+  <p>{post.frontmatter.description}</p>
+  <ul class="actions special">
+    <li>
+      <a href="#" class="button"> Full Story</a>
+    </li>
+  </ul>
+</article>

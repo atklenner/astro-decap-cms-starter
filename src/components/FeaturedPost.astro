@@ -1,0 +1,24 @@
+---
+const { featuredPost } = Astro.props;
+---
+
+<article class="featuredPost featured">
+  <header class="major">
+    <span class="date">{featuredPost.frontmatter.publishDate}</span>
+    <h2>
+      <a href={featuredPost.url}>{featuredPost.frontmatter.title}</a>
+    </h2>
+    <p>
+      {featuredPost.frontmatter.description}
+    </p>
+  </header>
+  <a href={featuredPost.url} class="image main"
+    ><img
+      src={featuredPost.frontmatter.image.url}
+      alt={featuredPost.frontmatter.image.alt}
+    /></a
+  >
+  <ul class="actions special">
+    <li><a href={featuredPost.url} class="button large">Full Story</a></li>
+  </ul>
+</article>
