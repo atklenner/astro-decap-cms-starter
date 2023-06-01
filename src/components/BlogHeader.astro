@@ -1,20 +1,24 @@
 ---
 import { SITE } from "../config";
+import BlogNav from "./BlogNav.astro";
 
 const path = Astro.url.pathname;
 ---
 
-{
-  path === "/" ? (
-    <div id="intro">
-      <h1>{SITE.title}</h1>
-      <p>I'm practicing how to use Astro and Decap.</p>
-    </div>
-  ) : (
-    <header id="header">
-      <a href="index.html" class="logo">
-        {SITE.title}
-      </a>
-    </header>
-  )
-}
+<header>
+  {
+    path === "/" ? (
+      <div id="intro">
+        <h1>{SITE.title}</h1>
+        <p>I'm practicing how to use Astro and Decap.</p>
+      </div>
+    ) : (
+      <div id="header">
+        <a href="index.html" class="logo">
+          {SITE.title}
+        </a>
+      </div>
+    )
+  }
+  <BlogNav />
+</header>
