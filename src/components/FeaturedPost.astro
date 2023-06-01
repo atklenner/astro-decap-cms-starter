@@ -14,8 +14,8 @@ const { featuredPost } = Astro.props;
   </header>
   <a href={featuredPost.url} class="image main"
     ><img
-      src={featuredPost.frontmatter.image.url}
-      alt={featuredPost.frontmatter.image.alt}
+      src={featuredPost.frontmatter.thumbnail}
+      alt={featuredPost.frontmatter.thumbnailAlt}
     /></a
   >
   <ul class="actions special">

@@ -8,9 +8,8 @@ const {
   title,
   description,
   publishDate,
-  author,
-  authorURL,
-  image,
+  thumbnail,
+  thumbnailAlt,
   permalink,
   tags,
   keywords,
@@ -43,19 +42,18 @@ const {
             {description}
           </p>
         </header>
-        <div class="image main"><img src={image.url} alt={image.alt} /></div>
+        <div class="image main"><img src={thumbnail} alt={thumbnailAlt} /></div>
         <div class="slot">
           <slot />
         </div>
+        {
+          tags.map((tag) => {
+            return <a href="#">{tag}</a>;
+          })
+        }
       </section>
     </main>
 
     <Copyright />
   </body>
 </html>
-
-<style>
-  .slot > p > img {
-      width: 100%;
-    }
-</style>
