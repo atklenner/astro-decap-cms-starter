@@ -3418,7 +3418,6 @@ body.is-preload #wrapper.fade-in:before {
   cursor: default;
   text-align: center;
   z-index: 1;
-  min-height: 100vh;
 }
 
 #intro input,
@@ -3569,7 +3568,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 @media screen and (max-width: 980px) {
   #intro {
     padding: 4rem 4rem 2rem 4rem;
-    min-height: 90vh;
   }
 
   #intro p br {
@@ -3584,7 +3582,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 @media screen and (max-width: 736px) {
   #intro {
     padding: 3rem 2rem 1rem 2rem;
-    min-height: 80vh;
   }
 
   #intro h1 {
@@ -3876,7 +3873,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 @media screen and (max-width: 980px) {
   #nav {
-    display: none;
   }
 }
 
