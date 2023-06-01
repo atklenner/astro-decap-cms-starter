@@ -1,7 +1,16 @@
+---
+// const { path } = Astro.props;
+const path = Astro.url.pathname;
+---
+
 <nav id="nav">
   <ul class="links">
-    <li class="active"><a href="/">Home</a></li>
-    <li><a href="generic.html">About</a></li>
-    <li><a href="elements.html">Contact</a></li>
+    <li class={path === "/" ? "active" : ""}><a href="/">Home</a></li>
+    <li class={path === "/about" ? "active" : ""}>
+      <a href="/about">About</a>
+    </li>
+    <li class={path === "/contact" ? "active" : ""}>
+      <a href="/contact">Contact</a>
+    </li>
   </ul>
 </nav>
