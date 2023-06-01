@@ -1,55 +1,31 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import BlogHeader from "../components/BlogHeader.astro";
-import BlogNav from "../components/BlogNav.astro";
-import Copyright from "../components/Copyright.astro";
 import FeaturedPost from "../components/FeaturedPost.astro";
 import Pagination from "../components/Pagination.astro";
 import Post from "../components/Post.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Astro + Decap";
-const description = "A blog built using Astro and Decap CMS.";
-const permalink = "https://example.com";
+import { SITE } from "../config";
+const title = SITE.title;
+const description = SITE.description;
+const permalink = SITE.baseURL;
 
 const posts = await Astro.glob("../pages/posts/*.md");
 const [featuredPost, ...otherPosts] = posts;
 ---
 
-<!DOCTYPE html>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-  <head>
-    <BaseHead {title} {description} {permalink} />
-  </head>
-  <body>
-    <!-- Intro -->
-    <BlogHeader />
+<BaseLayout {title} {description} {permalink}>
+  <!-- Featured Post -->
+  <FeaturedPost {featuredPost} />
 
-    <!-- Nav -->
-    <BlogNav />
+  <!-- Posts -->
+  <section class="posts">
+    {
+      otherPosts.slice(0, 4).map((post) => {
+        return <Post {post} />;
+      })
+    }
+  </section>
 
-    <!-- Main -->
-    <div id="main">
-      <!-- Featured Post -->
-      <FeaturedPost {featuredPost} />
-
-      <!-- Posts -->
-      <section class="posts">
-        {
-          otherPosts.slice(0, 4).map((post) => {
-            return <Post {post} />;
-          })
-        }
-      </section>
-
-      <!-- Footer -->
-      <Pagination />
-    </div>
-
-    <Copyright />
-  </body>
-</html>
+  <!-- Footer -->
+  <Pagination />
+</BaseLayout>
