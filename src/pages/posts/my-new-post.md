@@ -4,9 +4,10 @@ publishDate: 19 May 2023
 author: Andrew
 authorURL: https://andrewklenner.netlify.app
 description: This is pretty slick
-image:
-  url: ""
-  alt: ""
+thumbnail: ""
+thumbnailAlt: ""
+tags:
+  - tag1
 layout: ../../layouts/BlogPost.astro
 ---
 
